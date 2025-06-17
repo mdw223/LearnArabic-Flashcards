@@ -4,18 +4,42 @@ import Card from './Card'
 import dictionary from './assets/Dictionary.js';
 
 function App() {
-  const [reviewedCount, setReviewedCount] = useState(0);
-  const totalCount = dictionary.length; //const [totalCount, setTotalCount] = useState(dictionary.length);
+  const totalCount = dictionary.length; 
   const [isVisible, setVisibility] = useState(true);
-  
-  const incrementReviewedCount = () => {
-        setReviewedCount((reviewedCount + 1) % totalCount);
-    };
+
 
   const toggleHide = () => {
-        setVisibility(!isVisible);
+    setVisibility(!isVisible);
   };
 
+  
+  const [unreviewedCardIndexes, setUnreviewedCardIndexes] = useState(Array.from({ length: totalCount }, (_, index) => index));
+  
+
+  const getRandomCardIndex = () => {
+    if (unreviewedCardIndexes.length === 0) {
+      const newIndexes = Array.from({ length: totalCount }, (_, index) => index);
+      setUnreviewedCardIndexes(newIndexes);
+      return Math.floor(Math.random() * (totalCount));
+    } 
+
+    let randomIndex = Math.floor(Math.random() * (unreviewedCardIndexes.length));
+    let selectedCardIndex = unreviewedCardIndexes[randomIndex];
+
+    // Remove the selected index from the unreviewed list
+    const newUnreviewedCardIndexes = [...unreviewedCardIndexes];
+    newUnreviewedCardIndexes.splice(randomIndex, 1);
+    setUnreviewedCardIndexes(newUnreviewedCardIndexes); // Update the state
+
+    return selectedCardIndex;
+  };
+  const [cardIndex, setCardIndex] = useState(0);
+  const getRandomIndex = () => {
+    setCardIndex(getRandomCardIndex()); // Update the card index
+  };
+  
+  let reviewed = totalCount - unreviewedCardIndexes.length;
+  
   return (
     <>
       <div className="App">
@@ -32,13 +56,13 @@ function App() {
         </div>
         
         
-        <h3>Reviewed {reviewedCount} cards of {totalCount}</h3>
+        <h3>Reviewed {reviewed} cards of {totalCount}</h3>
 
         <div className="card-container" >
-          <Card dictionaryIndex={reviewedCount}/>
+          <Card dictionaryIndex={cardIndex}/>
         </div>
-        <button className="next-button" onClick={incrementReviewedCount}>
-            Next
+        <button className="next-button" onClick={getRandomIndex}>
+            {reviewed == totalCount ? "Again" : "Next"}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
