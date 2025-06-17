@@ -45,6 +45,8 @@
 
 /* Styles for the back side of the card */
 .card-back {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(0, 74, 0); /* Red background for the back */
     transform: rotateY(180deg); /* Rotate back side to hide it initially */
 }
@@ -56,4 +58,9 @@
 .card:hover {
     transform: scale(1.05); /* Slightly enlarge the card on hover */
     transition: transform 0.3s; /* Animation duration for hover effect */
+}
+
+.image-format {
+    width: 100px;
+
 }

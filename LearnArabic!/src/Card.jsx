@@ -20,7 +20,9 @@ const Card = ({dictionaryIndex}) => {
                         <h2>{dictionary[dictionaryIndex].eng}</h2>
                     </div>
                 <div className="card-back">
+                    
                         <h2>{dictionary[dictionaryIndex].ar}</h2>
+                        <img className="image-format" src={dictionary[dictionaryIndex].pic} />
                     </div>
             </div>
         </div>
