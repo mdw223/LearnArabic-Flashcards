@@ -52,7 +52,7 @@ GIF created with Microsoft Clipchamp
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Challenges encountered while building the app was implementing a way to select a random card due to page refreshing.
 
 ## License
 
