@@ -6,7 +6,7 @@ An interactive flashcard application designed to help users learn Arabic vocabul
 
 LearnArabic Flashcards is a web-based study tool that provides an immersive way to learn Arabic vocabulary. The application features a card-based system where users can study Arabic words, view translations, and test their knowledge through interactive flashcard sessions.
 
-**Live Demo**: [LearnArabic Flashcards](https://mdw223.github.io/LearnArabic-Flashcards/)
+**Live Website**: [LearnArabic Flashcards](https://mdw223.github.io/LearnArabic-Flashcards/)
 
 **Video Walkthrough**: [Watch Demo on YouTube](https://youtu.be/ftRRHxlA8Z0)
 
@@ -144,4 +144,4 @@ This project is for educational purposes and is part of a web development learni
 
 ---
 
-*مرحبا بك في رحلة تعلم اللغة العربية* - Welcome to your Arabic learning journey! 🌙
+*مرحبا بك في رحلة تعلم اللغة العربية* - Welcome to your Arabic learning journey 🌙
